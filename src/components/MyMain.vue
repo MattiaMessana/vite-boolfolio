@@ -4,7 +4,8 @@ import axios from 'axios';
 export default {
  data() {
     return {
-        projects: []
+        projects: [],
+        imgUrlBase: 'http://127.0.0.1:8000/storage',
     }
  },
  created() {
@@ -21,10 +22,13 @@ export default {
     <div class="row row-cols-4">
         <div class="col my-2" v-for="project in projects">
             <div class="card h-100">
-                <img src="..." class="card-img-top" alt="...">
+                <img class="card-img-top" 
+                 :src="project.cover_img ? `${imgUrlBase}/${project.cover_img}` : `https://placehold.co/500x300?text=immagine+non+disponibile`" 
+                 :alt="project.title">
+
                 <div class="card-body ">
                     <h5 class="card-title">{{ project.title }}</h5>
-                    <p class="card-text">{{ project.description }}</p>
+                    <p class="card-text">{{ project.slug }}</p>
                 </div>
             </div>
         </div>
