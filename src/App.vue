@@ -1,9 +1,9 @@
 <script>
-  import MyMain from "./components/MyMain.vue";
+  import MyHeader from "./components/MyHeader.vue";
 
   export default {
     components: {
-      MyMain,
+      MyHeader,
     },
 
   };
@@ -11,7 +11,8 @@
 
 <template>
 
-  <MyMain />
+  <MyHeader />
+  <router-view></router-view>
   
 </template>
 
