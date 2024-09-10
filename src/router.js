@@ -3,6 +3,7 @@ import AppHome from './pages/AppHome.vue';
 import ProjectsPage from './pages/ProjectsPage.vue';
 import SingleProject from './pages/SingleProject.vue';
 import NotFound from './pages/NotFound.vue';
+import AppAbout from './pages/AppAbout.vue';
 
 
 
@@ -15,6 +16,11 @@ const router = createRouter({
             component: AppHome,
         },
         {
+            path: '/about',
+            name: 'about',
+            component: AppAbout,
+        },
+        {
             path: '/project',
             name: 'project',
             component: ProjectsPage,
@@ -25,7 +31,7 @@ const router = createRouter({
             component: SingleProject,
         },
         {
-            path: '/not-found',
+            path: "/:pathMatch(.*)*",
             name: 'not-found',
             component: NotFound,
         }
